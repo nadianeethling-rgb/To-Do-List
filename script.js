@@ -2,8 +2,8 @@
 // Preset category colors
 // =========================
 const categoryColors = {
-  Work: "#4f7cff",
-  Personal: "#ff8c42",
+  Work: "#4fb9ffff",
+  Personal: "#ff42c6ff",
   Other: "#6fcf97"
 };
 
