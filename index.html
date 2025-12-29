@@ -8,33 +8,66 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <noscript>
     <section style="padding:1em; background:#ffefef; color:#a00; border-radius:8px; margin:2em;">
       This application requires JavaScript to function properly. Please enable JavaScript in your browser.
     </section>
   </noscript>
+
   <main class="notepad-window">
-    <header>
+
+    <!-- Header -->
+    <header class="notepad-header">
       <span class="notepad-title">Task Manager</span>
     </header>
+
+    <!-- Add Task -->
     <section>
       <form id="task-form" class="notepad-form" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Add a new task</legend>
-          <input type="text" id="task-input" placeholder="Enter a new task" required aria-label="Task description">
-          <select id="category-picker" title="Choose category" aria-label="Task category">
-            <option value="Work">Work</option>
-            <option value="Personal">Personal</option>
-            <option value="Other">Other</option>
-          </select>
-          <input type="color" id="category-color-picker" value="#62b7d9" title="Choose category color" aria-label="Category color">
-          <input type="color" id="color-picker" value="#222222" title="Choose font color" aria-label="Task font color">
-          <input type="date" id="due-date-input" title="Due date" aria-label="Due date">
-          <input type="file" id="photo-input" accept="image/*" title="Attach a photo" aria-label="Attach a photo">
-          <button type="submit">Add</button>
-        </fieldset>
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Enter a new task"
+          required
+          aria-label="Task description"
+        >
+
+        <select id="category-picker" aria-label="Task category">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <!-- Font color picker (still allowed) -->
+        <input
+          type="color"
+          id="color-picker"
+          value="#222222"
+          title="Choose font color"
+          aria-label="Task font color"
+        >
+
+        <input
+          type="date"
+          id="due-date-input"
+          title="Due date"
+          aria-label="Due date"
+        >
+
+        <input
+          type="file"
+          id="photo-input"
+          accept="image/*"
+          title="Attach a photo"
+          aria-label="Attach a photo"
+        >
+
+        <button type="submit">Add</button>
       </form>
     </section>
+
+    <!-- Filter / Sort -->
     <section class="filter-bar">
       <label for="filter-category">Filter:</label>
       <select id="filter-category" aria-label="Filter by category">
@@ -43,12 +76,21 @@
         <option value="Personal">Personal</option>
         <option value="Other">Other</option>
       </select>
-      <button id="sort-due-date-btn" type="button">Sort by Due Date</button>
+
+      <button id="sort-due-date-btn" type="button">
+        Sort by Due Date
+      </button>
     </section>
+
+    <!-- Task List -->
     <section>
-      <ul id="task-list" class="notepad-list" aria-label="Task list"></ul>
+      <ul id="task-list" class="notepad-list" aria-label="Task list">
+        <!-- Tasks injected by JS -->
+      </ul>
     </section>
+
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
