@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager - Notepad Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>
+    <section style="padding:1em; background:#ffefef; color:#a00; border-radius:8px; margin:2em;">
+      This application requires JavaScript to function properly. Please enable JavaScript in your browser.
+    </section>
+  </noscript>
+  <main class="notepad-window">
+    <header>
+      <span class="notepad-title">Task Manager</span>
+    </header>
+    <section>
+      <form id="task-form" class="notepad-form" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Add a new task</legend>
+          <input type="text" id="task-input" placeholder="Enter a new task" required aria-label="Task description">
+          <select id="category-picker" title="Choose category" aria-label="Task category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="color" id="category-color-picker" value="#62b7d9" title="Choose category color" aria-label="Category color">
+          <input type="color" id="color-picker" value="#222222" title="Choose font color" aria-label="Task font color">
+          <input type="date" id="due-date-input" title="Due date" aria-label="Due date">
+          <input type="file" id="photo-input" accept="image/*" title="Attach a photo" aria-label="Attach a photo">
+          <button type="submit">Add</button>
+        </fieldset>
+      </form>
+    </section>
+    <section class="filter-bar">
+      <label for="filter-category">Filter:</label>
+      <select id="filter-category" aria-label="Filter by category">
+        <option value="All">All</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+      </select>
+      <button id="sort-due-date-btn" type="button">Sort by Due Date</button>
+    </section>
+    <section>
+      <ul id="task-list" class="notepad-list" aria-label="Task list"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
